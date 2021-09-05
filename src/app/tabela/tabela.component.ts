@@ -20,6 +20,7 @@ export class TabelaComponent implements OnInit, OnDestroy {
     this.podtytul = Math.ceil(Math.random() * 100).toString();
     this.lista.pobierzOsoby().subscribe(
       (wartosc: Osoba[]) => {
+        console.log(wartosc);
         this.osoby = wartosc;
       }
     );

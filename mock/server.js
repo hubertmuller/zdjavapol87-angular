@@ -2,7 +2,11 @@ const http = require('http');
 const port = 3200;
 
 const server = http.createServer( (req, res) => {
-  console.log('PRzyszlo zapytanie ');
+  console.log('Przyszlo zapytanie ');
+  res.setHeader('Content-type', 'application/json');
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Headers', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
   res.end(`
   [
     {
@@ -27,7 +31,7 @@ const server = http.createServer( (req, res) => {
     }
   ]
   `);
-  console.log('Odpowiedzielismy ');
+  console.log('Odpowiedzielismy');
 }   );
 
 server.listen(port, '127.0.0.1', () => {

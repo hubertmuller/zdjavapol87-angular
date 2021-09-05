@@ -8,7 +8,7 @@ import {Observable} from 'rxjs';
 export class ListaService {
   constructor(private http: HttpClient) { }
   pobierzOsoby(): Observable<Osoba[]> {
-    return this.http.get<Osoba[]>('jakisadres');
+    return this.http.get<Osoba[]>('http://localhost:3200');
   }
 }
 
