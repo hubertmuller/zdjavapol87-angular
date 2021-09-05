@@ -13,7 +13,7 @@ export class TabelaComponent implements OnInit, OnDestroy {
   public tytul: string;
 
   public podtytul: string;
-  private osoby: Osoba[];
+  public osoby: Osoba[];
 
   constructor(private konwerter: KonwerterService, private lista: ListaService) {
     console.log('tabela - constructor');
