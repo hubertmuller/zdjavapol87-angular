@@ -7,6 +7,7 @@ import { TabelaComponent } from './tabela/tabela.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NaglowekComponent } from './naglowek/naglowek.component';
 import { FormularzComponent } from './formularz/formularz.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FormularzComponent } from './formularz/formularz.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

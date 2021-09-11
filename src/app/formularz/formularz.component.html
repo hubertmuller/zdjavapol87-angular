@@ -1,17 +1,21 @@
 <h2>Formularz</h2>
 
-<form method="get" action="index.html" name="forma">
+<pre>
+{{ forma.value | json }}
+</pre>
+
+<form [formGroup]="forma" method="get" action="index.html" name="forma">
 
   <div id="blad"></div>
 
   <div>
     <label for="imieid">Imie</label>
-    <input type="text" name="imie" id="imieid" placeholder="wpisz tutaj imie">
+    <input formControlName="imie" type="text" name="imie" id="imieid" placeholder="wpisz tutaj imie">
   </div>
 
   <div>
     <label for="nazwiskoid">Nazwisko</label>
-    <input type="text" name="nazwisko" class="styl1 styl2" id="nazwiskoid" value="Nowak" placeholder="wpisz tutaj nazwisko">
+    <input formControlName="nazwisko" type="text" name="nazwisko" class="styl1 styl2" id="nazwiskoid" value="Nowak" placeholder="wpisz tutaj nazwisko">
   </div>
 
   <div>
