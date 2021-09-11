@@ -40,7 +40,7 @@ export class TabelaComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    console.log('tabela - ngOnDestroy');
+    console.log('tabela - ngOnDestroy - czas umierac! wysubskrybowuje sie!');
     this.listaOsobSub.unsubscribe();
   }
 

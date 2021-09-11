@@ -1,0 +1,56 @@
+<h2>Formularz</h2>
+
+<form method="get" action="index.html" name="forma">
+
+  <div id="blad"></div>
+
+  <div>
+    <label for="imieid">Imie</label>
+    <input type="text" name="imie" id="imieid" placeholder="wpisz tutaj imie">
+  </div>
+
+  <div>
+    <label for="nazwiskoid">Nazwisko</label>
+    <input type="text" name="nazwisko" class="styl1 styl2" id="nazwiskoid" value="Nowak" placeholder="wpisz tutaj nazwisko">
+  </div>
+
+  <div>
+    <label for="hasloid">Hasło</label>
+    <input type="password" id="hasloid" name="haslo" value="">
+  </div>
+
+  <fieldset>
+    <legend>Płeć</legend>
+    <label for="kid">Kobieta</label>
+    <input type="radio" value="k" id="kid" name="plec">
+    <label for="kid">Mężczyzna</label>
+    <input type="radio" value="m" id="mid" name="plec">
+  </fieldset>
+
+  <fieldset >
+    <legend>Specjalne bonusy</legend>
+    <label for="cid">Chcę czekoladę</label>
+    <input type="checkbox" value="c" id="cid" name="x">
+    <label for="coid">Chcę colę</label>
+    <input type="checkbox" value="k" id="coid" name="y">
+  </fieldset>
+
+  <div >
+    <label for="szczepionkaid">Wybierz szczepionkę</label>
+    <select name="szczepionka" id="szczepionkaid">
+      <option value="" disabled readonly selected>Wybierz</option>
+      <option value="1">Corminaty</option>
+      <option value="2">Novawax</option>
+      <option value="3">Astra Zeneca</option>
+    </select>
+  </div>
+
+  <div >
+    <label for="uwagiid">Dodatkowe uwagi</label>
+    <textarea name="komentarz" rows="10" id="uwagiid" cols="40"></textarea>
+  </div>
+
+  <input type="submit" value="Wyślij formularz">
+  <input type="reset" value="Kasuj">
+
+</form>
