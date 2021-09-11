@@ -8,13 +8,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { NaglowekComponent } from './naglowek/naglowek.component';
 import { FormularzComponent } from './formularz/formularz.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { PotwierdzenieComponent } from './potwierdzenie/potwierdzenie.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TabelaComponent,
     NaglowekComponent,
-    FormularzComponent
+    FormularzComponent,
+    PotwierdzenieComponent
   ],
   imports: [
     BrowserModule,

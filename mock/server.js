@@ -9,190 +9,53 @@ const server = http.createServer( (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Headers', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-  res.end(`
+
+  if (req.method === 'GET' && req.url === '/api/lista') {
+    res.end(`
   [
     {
       "imie": "Janek",
       "nazwisko": "Kowalski",
+      "haslo": "",
       "plec": "m",
-      "szczepionka": "p",
+      "szczepionka": "1",
       "zyczenia": {
-        "a": true,
-        "b": false
-      }
+        "x": true,
+        "y": false
+      },
+      "uwagi": ""
     },
       {
       "imie": "Anna",
       "nazwisko": "Nowak",
+      "haslo": "",
       "plec": "k",
-      "szczepionka": "a",
+      "szczepionka": "2",
       "zyczenia": {
-        "a": true,
-        "b": true
-      }
+        "x": true,
+        "y": true
+      },
+      "uwagi": ""
     },
       {
       "imie": "Anna",
       "nazwisko": "Nowak",
+      "haslo": "",
       "plec": "k",
-      "szczepionka": "a",
+      "szczepionka": "3",
       "zyczenia": {
-        "a": true,
-        "b": true
-      }
-    },
-      {
-      "imie": "Anna",
-      "nazwisko": "Nowak",
-      "plec": "k",
-      "szczepionka": "a",
-      "zyczenia": {
-        "a": true,
-        "b": true
-      }
-    },
-      {
-      "imie": "Anna",
-      "nazwisko": "Nowak",
-      "plec": "k",
-      "szczepionka": "a",
-      "zyczenia": {
-        "a": true,
-        "b": true
-      }
-    },
-      {
-      "imie": "Anna",
-      "nazwisko": "Nowak",
-      "plec": "k",
-      "szczepionka": "a",
-      "zyczenia": {
-        "a": true,
-        "b": true
-      }
-    },
-      {
-      "imie": "Anna",
-      "nazwisko": "Nowak",
-      "plec": "k",
-      "szczepionka": "a",
-      "zyczenia": {
-        "a": true,
-        "b": true
-      }
-    },
-      {
-      "imie": "Anna",
-      "nazwisko": "Nowak",
-      "plec": "k",
-      "szczepionka": "a",
-      "zyczenia": {
-        "a": true,
-        "b": true
-      }
-    },
-      {
-      "imie": "Anna",
-      "nazwisko": "Nowak",
-      "plec": "k",
-      "szczepionka": "a",
-      "zyczenia": {
-        "a": true,
-        "b": true
-      }
-    },
-      {
-      "imie": "Anna",
-      "nazwisko": "Nowak",
-      "plec": "k",
-      "szczepionka": "a",
-      "zyczenia": {
-        "a": true,
-        "b": true
-      }
-    },
-      {
-      "imie": "Anna",
-      "nazwisko": "Nowak",
-      "plec": "k",
-      "szczepionka": "a",
-      "zyczenia": {
-        "a": true,
-        "b": true
-      }
-    },
-      {
-      "imie": "Anna",
-      "nazwisko": "Nowak",
-      "plec": "k",
-      "szczepionka": "a",
-      "zyczenia": {
-        "a": true,
-        "b": true
-      }
-    },
-      {
-      "imie": "Anna",
-      "nazwisko": "Nowak",
-      "plec": "k",
-      "szczepionka": "a",
-      "zyczenia": {
-        "a": true,
-        "b": true
-      }
-    },
-      {
-      "imie": "Anna",
-      "nazwisko": "Nowak",
-      "plec": "k",
-      "szczepionka": "a",
-      "zyczenia": {
-        "a": true,
-        "b": true
-      }
-    },
-      {
-      "imie": "Anna",
-      "nazwisko": "Nowak",
-      "plec": "k",
-      "szczepionka": "a",
-      "zyczenia": {
-        "a": true,
-        "b": true
-      }
-    },
-      {
-      "imie": "Anna",
-      "nazwisko": "Nowak",
-      "plec": "k",
-      "szczepionka": "a",
-      "zyczenia": {
-        "a": true,
-        "b": true
-      }
-    },
-      {
-      "imie": "Anna",
-      "nazwisko": "Nowak",
-      "plec": "k",
-      "szczepionka": "a",
-      "zyczenia": {
-        "a": true,
-        "b": true
-      }
-    },
-      {
-      "imie": "Anna",
-      "nazwisko": "Nowak",
-      "plec": "k",
-      "szczepionka": "a",
-      "zyczenia": {
-        "a": true,
-        "b": true
-      }
+        "x": true,
+        "y": true
+      },
+      "uwagi": ""
     }
   ]
   `);
+  } else if (req.method === 'POST' && req.url === '/api/osoba') {
+    res.end();
+  } else {
+    res.end();
+  }
   console.log('Odpowiedzielismy');
 }   );
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {ListaService, Osoba} from '../lista.service';
 
 @Component({
   selector: 'app-formularz',
@@ -25,7 +26,7 @@ export class FormularzComponent implements OnInit {
     uwagi: new FormControl(null, {})
   });
 
-  constructor() { }
+  constructor(private lista: ListaService) { }
 
   ngOnInit(): void {
     this.forma.controls.imie.valueChanges.subscribe(
@@ -51,10 +52,31 @@ export class FormularzComponent implements OnInit {
     this.forma.controls.imie.setValue('Stefan');
     console.log(this.forma.controls);
   }
+
+  public zapisz(): void {
+    const stanFormy = this.forma.controls;
+    const osoba: Osoba = {
+      imie: stanFormy.imie.value,
+      nazwisko: stanFormy.nazwisko.value,
+      plec: stanFormy.plec.value,
+      haslo: stanFormy.haslo.value,
+      szczepionka: stanFormy.szczepionka.value,
+      zyczenia: stanFormy.zyczenia.value,
+      uwagi: stanFormy.uwagi.value,
+    };
+    this.lista.zapiszOsobe(osoba).subscribe (
+      (value) => {
+          console.log('udalo sie zapisac');
+      }
+    );
+  }
+
 }
 
+
+
 class NaszValidator {
-  static wymaganywiek(dolna: number, gorna: number) {
+  static wymaganywiek(dolna: number, gorna: number): any {
     return (control: FormControl) => {
       const wartosc = control.value;
       if (dolna <= wartosc && gorna >= wartosc) {

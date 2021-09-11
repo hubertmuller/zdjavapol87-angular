@@ -66,7 +66,8 @@
     <textarea formControlName="uwagi" name="komentarz" rows="10" id="uwagiid" cols="40"></textarea>
   </div>
 
-  <input type="submit" value="Wyślij formularz">
+  <input type="submit" *ngIf="forma.valid"
+         value="Wyślij formularz" (click)="zapisz()">
   <input type="reset" value="Kasuj">
 
 </form>
