@@ -4,10 +4,12 @@
   <tr>
     <th>Imie</th>
     <th>Nazwisko</th>
+    <th>Operacje</th>
   </tr>
   <tr *ngFor="let osoba of osoby">
     <td>{{osoba.imie}}</td>
     <td>{{osoba.nazwisko}}</td>
+    <td>[ <a [routerLink]="['/edytuj']">Edytuj</a> ] [ <a [routerLink]="['/kasuj']">Kasuj</a> ]</td>
   </tr>
 </table>
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {ListaService, Osoba} from '../lista.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-formularz',
@@ -26,7 +27,7 @@ export class FormularzComponent implements OnInit {
     uwagi: new FormControl(null, {})
   });
 
-  constructor(private lista: ListaService) { }
+  constructor(private lista: ListaService, private router: Router) { }
 
   ngOnInit(): void {
     this.forma.controls.imie.valueChanges.subscribe(
@@ -67,6 +68,7 @@ export class FormularzComponent implements OnInit {
     this.lista.zapiszOsobe(osoba).subscribe (
       (value) => {
           console.log('udalo sie zapisac');
+          this.router.navigate(['/potwierdzenie']);
       }
     );
   }
