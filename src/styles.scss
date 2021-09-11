@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;900&display=swap');
+
+* {
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+body, input, textarea, select {
+  font-size: 18px;
+}

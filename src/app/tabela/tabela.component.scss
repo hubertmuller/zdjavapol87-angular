@@ -1,0 +1,28 @@
+table {
+  border: 1px solid #aaaaaa;
+  border-collapse: collapse;
+}
+
+th {
+  background-color: bisque;
+}
+
+td, th, caption {
+  padding: 10px;
+  text-align: left;
+}
+
+tr {
+  background-color: beige;
+}
+
+tr:hover {
+  background-color: antiquewhite;
+}
+
+caption {
+  background-color: brown;
+  color: white;
+  font-size: 25px;
+  /*text-align: center;*/
+}
