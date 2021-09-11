@@ -1,0 +1,19 @@
+h1 {
+  background-color: yellow;
+  color: red;
+  font-size: 45px;
+}
+h1 + div {
+  font-size: 25px;
+}
+h1 + div + div {
+  font-size: 25px;
+}
+
+div {
+  background-color: yellow;
+  color: red;
+  font-size: 35px;
+}
+
+/*# sourceMappingURL=test.css.map */

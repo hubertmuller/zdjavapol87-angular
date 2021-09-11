@@ -1,0 +1,22 @@
+@mixin kolory() {
+  background-color: yellow;
+  color: red;
+}
+
+$rozmiar_bazowy: 50px;
+
+h1 {
+  @include kolory;
+  font-size: $rozmiar_bazowy*0.9;
+    +div {
+      font-size: $rozmiar_bazowy *0.5;
+      +div {
+        font-size: $rozmiar_bazowy *0.5;
+      }
+    }
+}
+
+div {
+  @include kolory;
+  font-size: $rozmiar_bazowy*0.7;
+}
