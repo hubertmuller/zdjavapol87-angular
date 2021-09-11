@@ -1,6 +1,7 @@
 import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {KonwerterService} from '../konwerter.service';
 import {ListaService, Osoba} from '../lista.service';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-tabela',
@@ -14,16 +15,19 @@ export class TabelaComponent implements OnInit, OnDestroy {
 
   public podtytul: string;
   public osoby: Osoba[];
+  private listaOsobSub: Subscription;
 
   constructor(private konwerter: KonwerterService, private lista: ListaService) {
     console.log('tabela - constructor');
     this.podtytul = Math.ceil(Math.random() * 100).toString();
-    this.lista.pobierzOsoby().subscribe(
+
+    this.listaOsobSub = this.lista.pobierzOsoby().subscribe(
       (wartosc: Osoba[]) => {
         console.log(wartosc);
         this.osoby = wartosc;
       }
     );
+
   }
 
   public przelicz(dlugoscwMetrach: number): number {
@@ -36,6 +40,7 @@ export class TabelaComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     console.log('tabela - ngOnDestroy');
+    this.listaOsobSub.unsubscribe();
   }
 
 }
