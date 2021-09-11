@@ -2,46 +2,58 @@
 
 <pre>
 {{ forma.value | json }}
+  jest poprawna: {{forma.valid}}
 </pre>
 
 <form [formGroup]="forma" method="get" action="index.html" name="forma">
 
-  <div id="blad"></div>
+  <div (click)="zmien()">Zmien wartosc</div>
 
   <div>
     <label for="imieid">Imie</label>
     <input formControlName="imie" type="text" name="imie" id="imieid" placeholder="wpisz tutaj imie">
+    <div *ngIf="forma.controls.imie.errors">
+      Wystąpiły następujące błędy:
+      <ul>
+      <li *ngIf="forma.controls.imie.errors.required">Pole jest wymagane</li>
+      <li *ngIf="forma.controls.imie.errors.minlength">Pole jest zbyt krótkie</li>
+      <li *ngIf="forma.controls.imie.errors.pattern">Nie spełnia wzorca</li>
+      </ul>
+    </div>
   </div>
 
   <div>
     <label for="nazwiskoid">Nazwisko</label>
     <input formControlName="nazwisko" type="text" name="nazwisko" class="styl1 styl2" id="nazwiskoid" value="Nowak" placeholder="wpisz tutaj nazwisko">
+    <div *ngIf="forma.controls.nazwisko.errors">Blad
+      {{forma.controls.nazwisko.errors.poprawnyprzedzial}}
+      </div>
   </div>
 
   <div>
     <label for="hasloid">Hasło</label>
-    <input type="password" id="hasloid" name="haslo" value="">
+    <input formControlName="haslo" type="password" id="hasloid" name="haslo" value="">
   </div>
 
   <fieldset>
     <legend>Płeć</legend>
     <label for="kid">Kobieta</label>
-    <input type="radio" value="k" id="kid" name="plec">
+    <input formControlName="plec" type="radio" value="k" id="kid" name="plec">
     <label for="kid">Mężczyzna</label>
-    <input type="radio" value="m" id="mid" name="plec">
+    <input formControlName="plec" type="radio" value="m" id="mid" name="plec">
   </fieldset>
 
-  <fieldset >
+  <fieldset [formGroup]="forma.controls.zyczenia">
     <legend>Specjalne bonusy</legend>
     <label for="cid">Chcę czekoladę</label>
-    <input type="checkbox" value="c" id="cid" name="x">
+    <input formControlName="x" type="checkbox" value="c" id="cid" name="x">
     <label for="coid">Chcę colę</label>
-    <input type="checkbox" value="k" id="coid" name="y">
+    <input formControlName="y" type="checkbox" value="k" id="coid" name="y">
   </fieldset>
 
-  <div >
+  <div>
     <label for="szczepionkaid">Wybierz szczepionkę</label>
-    <select name="szczepionka" id="szczepionkaid">
+    <select formControlName="szczepionka" name="szczepionka" id="szczepionkaid">
       <option value="" disabled readonly selected>Wybierz</option>
       <option value="1">Corminaty</option>
       <option value="2">Novawax</option>
@@ -51,7 +63,7 @@
 
   <div >
     <label for="uwagiid">Dodatkowe uwagi</label>
-    <textarea name="komentarz" rows="10" id="uwagiid" cols="40"></textarea>
+    <textarea formControlName="uwagi" name="komentarz" rows="10" id="uwagiid" cols="40"></textarea>
   </div>
 
   <input type="submit" value="Wyślij formularz">
