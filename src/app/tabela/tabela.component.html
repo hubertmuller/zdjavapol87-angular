@@ -9,7 +9,7 @@
   <tr *ngFor="let osoba of osoby">
     <td>{{osoba.imie}}</td>
     <td>{{osoba.nazwisko}}</td>
-    <td>[ <a [routerLink]="['/edytuj']">Edytuj</a> ] [ <a [routerLink]="['/kasuj']">Kasuj</a> ]</td>
+    <td>[ <a [routerLink]="['/edytuj', osoba.id]">Edytuj</a> ] [ <a [routerLink]="['/kasuj', osoba.id]">Kasuj</a> ]</td>
   </tr>
 </table>
 

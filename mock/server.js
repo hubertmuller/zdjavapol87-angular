@@ -14,6 +14,7 @@ const server = http.createServer( (req, res) => {
     res.end(`
   [
     {
+      "id": "1",
       "imie": "Janek",
       "nazwisko": "Kowalski",
       "haslo": "",
@@ -26,6 +27,7 @@ const server = http.createServer( (req, res) => {
       "uwagi": ""
     },
       {
+      "id": "2",
       "imie": "Anna",
       "nazwisko": "Nowak",
       "haslo": "",
@@ -38,6 +40,7 @@ const server = http.createServer( (req, res) => {
       "uwagi": ""
     },
       {
+      "id": "3",
       "imie": "Anna",
       "nazwisko": "Nowak",
       "haslo": "",

@@ -23,6 +23,7 @@ export class ListaService {
 }
 
 export interface Osoba {
+  id?: string;
   imie: string;
   nazwisko: string;
   haslo: string;

@@ -9,6 +9,8 @@ import { NaglowekComponent } from './naglowek/naglowek.component';
 import { FormularzComponent } from './formularz/formularz.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { PotwierdzenieComponent } from './potwierdzenie/potwierdzenie.component';
+import { EdytujComponent } from './edytuj/edytuj.component';
+import { UsunComponent } from './usun/usun.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { PotwierdzenieComponent } from './potwierdzenie/potwierdzenie.component'
     TabelaComponent,
     NaglowekComponent,
     FormularzComponent,
-    PotwierdzenieComponent
+    PotwierdzenieComponent,
+    EdytujComponent,
+    UsunComponent
   ],
   imports: [
     BrowserModule,
