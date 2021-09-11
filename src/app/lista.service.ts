@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {environment} from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ import {Observable} from 'rxjs';
 export class ListaService {
   constructor(private http: HttpClient) { }
   pobierzOsoby(): Observable<Osoba[]> {
-    return this.http.get<Osoba[]>('http://localhost:3200');
+    return this.http.get<Osoba[]>(environment.endPointURL);
   }
 }
 

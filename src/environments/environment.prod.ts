@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  endPointURL: 'http://github.com/user-pages/mojnick/endpoint/lista'
 };

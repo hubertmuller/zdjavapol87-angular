@@ -1,4 +1,4 @@
-import {Component, Input, OnDestroy, OnInit} from '@angular/core';
+import {Component, Input, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {KonwerterService} from '../konwerter.service';
 import {ListaService, Osoba} from '../lista.service';
 import {Subscription} from 'rxjs';
@@ -6,7 +6,8 @@ import {Subscription} from 'rxjs';
 @Component({
   selector: 'app-tabela',
   templateUrl: './tabela.component.html',
-  styleUrls: ['./tabela.component.scss']
+  styleUrls: ['./tabela.component.scss'],
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class TabelaComponent implements OnInit, OnDestroy {
 
